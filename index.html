@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copit Canada</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FREE SHIPPING -->
+<div class="announcement" id="announcement">
+  FREE WORLDWIDE DELIVERY
+  <span class="close-announcement" onclick="closeAnnouncement()">✕</span>
+</div>
+
+<header id="mainHeader">
+
+<div class="nav-left">
+    <a href="#">HOME</a>
+    <div class="catalog-dropdown">
+      <a href="#">CATALOG</a>
+      <div class="mega-menu">
+        <a href="clothes.html">CLOTHES</a>
+        <a href="#">FRAGRANCES</a>
+        <a href="#">ELECTRONICS</a>
+      </div>
+    </div>
+    <a href="#contact">CONTACT</a>
+  </div>
+
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Copit Canada Logo">
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <a href="#" id="profileBtn" onclick="openAuth()">PROFILE</a>
+    <a href="#" id="logoutBtn" style="display:none;">LOG OUT</a>
+    <button id="adminBtn" style="display:none; margin-left: 15px; background: var(--red); color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 700; cursor: pointer;">ADMIN</button>
+    <!-- ADMIN PANEL MODAL -->
+    <div class="admin-modal" id="adminModal" style="display:none;">
+      <div class="admin-box">
+        <span id="closeAdminModal" style="float:right;cursor:pointer;font-size:24px;">✕</span>
+        <h2>Admin Panel</h2>
+        <div id="adminContent" style="max-height:60vh;overflow:auto;"></div>
+      </div>
+    </div>
+    <a href="cart.html" id="cartBtn">CART</a>
+  </div>
+
+</header>
+
+<div class="moving-banner" id="movingBanner">
+  <div class="banner-track">
+    💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers •
+  </div>
+  </div>
+</div>
+<!-- SHOP CATEGORIES -->
+<section id="categories" class="categories">
+  <h2 class="gradient-title">SHOP BY CATEGORY</h2>
+
+  <div class="category-grid">
+
+    <a href="clothes.html" style="text-decoration:none;color:inherit;">
+      <div class="category-box">
+        <img src="images/clothes.jpg">
+        <div class="category-content">
+          <h3>CLOTHES</h3>
+          <span class="btn">SHOP NOW ></span>
+        </div>
+      </div>
+    </a>
+
+    <div class="category-box">
+      <img src="images/fragrances.jpg">
+      <div class="category-content">
+        <h3>FRAGRANCES</h3>
+        <a href="#" class="btn">SHOP NOW ></a>
+      </div>
+    </div>
+
+    <div class="category-box">
+      <img src="images/electronics.jpg">
+      <div class="category-content">
+        <h3>ELECTRONICS</h3>
+        <a href="#" class="btn">SHOP NOW ></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOGIN MODAL -->
+<div class="auth-modal" id="authModal">
+  <div class="auth-box" id="authBox">
+    <span onclick="closeAuth()">✕</span>
+    <h2 id="authTitle">LOGIN / SIGN UP</h2>
+    <form id="authForm">
+      <input type="text" id="authEmail" placeholder="EMAIL" required>
+      <input type="password" id="authPassword" placeholder="PASSWORD" required>
+      <div id="signupFields" style="display:none;">
+        <input type="text" id="authName" placeholder="NAME" required>
+        <input type="text" id="authPhone" placeholder="PHONE NUMBER (optional)">
+      </div>
+      <button type="submit" id="authSubmit">SUBMIT</button>
+    </form>
+    <div style="margin-top:10px;">
+      <a href="#" id="toggleAuthMode">Don't have an account? Sign up</a>
+    </div>
+    <div id="authError" style="color:red;margin-top:10px;"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

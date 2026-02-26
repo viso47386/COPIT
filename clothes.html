@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clothes - Copit Canada</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FREE SHIPPING -->
+<div class="announcement" id="announcement"></div>
+
+<header id="mainHeader">
+  <div class="nav-left">
+    <a href="index.html">HOME</a>
+    <div class="catalog-dropdown">
+      <a href="#">CATALOG</a>
+      <div class="mega-menu">
+        <a href="#">CLOTHES</a>
+        <a href="#">FRAGRANCES</a>
+        <a href="#">ELECTRONICS</a>
+      </div>
+    </div>
+    <a href="#contact">CONTACT</a>
+  </div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Copit Canada Logo">
+    </a>
+  </div>
+  <div class="nav-right">
+    <a href="cart.html" id="cartBtn">CART</a>
+    <a href="#" id="profileBtn" onclick="openAuth()">PROFILE</a>
+  </div>
+</header>
+
+<div class="moving-banner" id="movingBanner">
+  <div class="banner-track">
+    💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers •
+  </div>
+</div>
+
+<!-- CLOTHES CONTENT HERE -->
+<section class="clothes-section">
+  <!-- FILTERS -->
+  <div class="filters-container" style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 40px;">
+    <div class="filter-group">
+      <label>Category:</label>
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="shirts">Shirts</button>
+      <button class="category-btn" data-category="pants">Pants</button>
+      <button class="category-btn" data-category="jackets">Jackets</button>
+      <button class="category-btn" data-category="accessories">Accessories</button>
+      <button class="category-btn" data-category="shoes">Shoes</button>
+    </div>
+    <div class="filter-group" style="margin-left: 30px;">
+      <label>Price:</label>
+      <input type="range" id="priceFilter" min="0" max="500" value="500">
+      <span id="priceValue">$0 - $500</span>
+    </div>
+    <div class="filter-group" style="margin-left: 30px;">
+      <label>Sort:</label>
+      <select id="sortFilter">
+        <option value="newest">Newest</option>
+        <option value="best-selling">Best Selling</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+  <!-- PRODUCTS GRID -->
+  <div class="products-grid" id="productsGrid" style="display: flex; justify-content: center;">
+    <!-- Products loaded by JS -->
+  </div>
+</section>
+
+<script src="script.js"></script>
+<script src="clothes.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

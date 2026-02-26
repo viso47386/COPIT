@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart - Copit Canada</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FREE SHIPPING -->
+<div class="announcement" id="announcement"></div>
+
+<header id="mainHeader">
+  <div class="nav-left">
+    <a href="index.html">HOME</a>
+    <div class="catalog-dropdown">
+      <a href="#">CATALOG</a>
+      <div class="mega-menu">
+        <a href="clothes.html">CLOTHES</a>
+        <a href="#">FRAGRANCES</a>
+        <a href="#">ELECTRONICS</a>
+      </div>
+    </div>
+    <a href="#contact">CONTACT</a>
+  </div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Copit Canada Logo">
+    </a>
+  </div>
+  <div class="nav-right">
+    <a href="#" id="profileBtn" onclick="openAuth()">PROFILE</a>
+  </div>
+</header>
+
+<div class="moving-banner" id="movingBanner">
+  <div class="banner-track">
+    💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers •
+  </div>
+</div>
+
+<!-- CART CONTENT -->
+<section class="cart-section">
+  <h1>SHOPPING CART</h1>
+  
+  <div class="cart-container">
+    <div class="cart-items" id="cartItems">
+      <!-- Items loaded by JS -->
+    </div>
+    
+    <div class="cart-summary">
+      <h2>ORDER SUMMARY</h2>
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <span id="subtotal">$0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping:</span>
+        <span id="shipping">FREE</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax:</span>
+        <span id="tax">$0.00</span>
+      </div>
+      <div class="summary-row total">
+        <span>TOTAL:</span>
+        <span id="total">$0.00</span>
+      </div>
+      <button class="btn checkout-btn">PROCEED TO CHECKOUT ></button>
+      <a href="clothes.html" class="continue-shopping">Continue Shopping</a>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+<script src="cart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

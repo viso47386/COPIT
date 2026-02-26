@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spydur Hoodie | Copit Canada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FREE SHIPPING -->
+<div class="announcement" id="announcement">
+  FREE WORLDWIDE DELIVERY
+  <span class="close-announcement" onclick="closeAnnouncement()">✕</span>
+</div>
+
+<header id="mainHeader">
+  <div class="nav-left">
+    <a href="index.html">HOME</a>
+    <div class="catalog-dropdown">
+      <a href="#">CATALOG</a>
+      <div class="mega-menu">
+        <a href="clothes.html">CLOTHES</a>
+        <a href="#">FRAGRANCES</a>
+        <a href="#">ELECTRONICS</a>
+      </div>
+    </div>
+    <a href="#contact">CONTACT</a>
+  </div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Copit Canada Logo">
+    </a>
+  </div>
+  <div class="nav-right">
+    <a href="#" id="profileBtn" onclick="openAuth()">PROFILE</a>
+    <a href="#" id="logoutBtn" style="display:none;">LOG OUT</a>
+    <button id="adminBtn" style="display:none; margin-left: 15px; background: var(--red); color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 700; cursor: pointer;">ADMIN</button>
+    <div class="admin-modal" id="adminModal" style="display:none;">
+      <div class="admin-box">
+        <span id="closeAdminModal" style="float:right;cursor:pointer;font-size:24px;">✕</span>
+        <h2>Admin Panel</h2>
+        <div id="adminContent" style="max-height:60vh;overflow:auto;"></div>
+      </div>
+    </div>
+    <a href="cart.html" id="cartBtn">CART</a>
+  </div>
+</header>
+
+<div class="moving-banner" id="movingBanner">
+  <div class="banner-track">
+    💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available – Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers • 💎 Only the best quality - Guaranteed • 🔥 Limited Stock Available - Shop Now • ⭐ Trusted by 25,000+ Happy Customers •
+  </div>
+</div>
+
+
+<div class="container" style="margin:10px auto 120px auto; display: flex; gap: 70px; align-items: center; justify-content: center; max-width: 1100px;">
+  <!-- LEFT: Images -->
+  <div class="product-images" style="flex: 0 0 520px; max-width: 520px; transform: translateY(10px);">
+    <div class="main-image" style="background:#111;display:flex;align-items:center;justify-content:center;width:520px;height:520px;border-radius:18px;position:relative;overflow:hidden;">
+      <div id="mainImgSlider" style="width:100%;height:100%;position:relative;z-index:1;">
+        <img src="images/spyder-black.jpeg" alt="Spydur Hoodie" id="mainProductImgA" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;transition:transform 0.44s cubic-bezier(.4,0,.2,1), opacity 0.44s cubic-bezier(.4,0,.2,1);z-index:2;">
+        <img src="images/spyder-black.jpeg" alt="Spydur Hoodie" id="mainProductImgB" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0;pointer-events:none;transition:transform 0.44s cubic-bezier(.4,0,.2,1), opacity 0.44s cubic-bezier(.4,0,.2,1);z-index:1;">
+
+      </div>
+      <button id="colorLeftBtn" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:#111;border:2px solid #ff1e1e;color:#fff;font-size:2rem;display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer;">&lt;</button>
+      <button id="colorRightBtn" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:#111;border:2px solid #ff1e1e;color:#fff;font-size:2rem;display:flex;align-items:center;justify-content:center;z-index:10;cursor:pointer;">&gt;</button>
+    </div>
+    <!-- Color swatches row under main image -->
+    <div class="swatches" id="colorSwatches" style="margin: 30px auto 0 auto; display: flex; justify-content: center; gap: 28px;"></div>
+  </div>
+  <!-- RIGHT: Selection and Info -->
+  <div class="product-info" style="flex:1;max-width:600px; transform: translateY(40px);">
+    <div class="rating" style="display:inline-block;background:#ff1e1e;color:#fff;font-size:0.95rem;padding:6px 18px;border-radius:7px;font-weight:700;letter-spacing:0.02em;box-shadow:0 2px 10px #0002;margin-bottom:10px;">★★★★★ 5.0 Stars | 1,251 Customers</div>
+    <div class="product-title" style="font-size:2.2rem;height:56px;display:flex;align-items:center;justify-content:flex-start;text-align:left;font-weight:700;margin-bottom:4px;">Spydur Hoodie</div>
+    <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:4px;">Premium Quality Guarantee</div>
+    <div style="display:flex;align-items:stretch;justify-content:flex-start;gap:10px;margin-bottom:12px;">
+      <div class="price" id="mainPrice" style="font-size:1.85rem;display:flex;align-items:center;height:2.2em;">
+        $25.99 <span style="display:inline-block;width:16px;"></span><span class="old-price" style="font-size:1.35rem;color:#888;text-decoration:line-through;">$79.99</span>
+      </div>
+      <div style="background:#ff1e1e;color:#fff;font-size:0.72rem;font-weight:700;padding:0 12px;display:flex;align-items:center;border-radius:5px;box-shadow:0 2px 8px #0001;white-space:nowrap;height:2.2em;line-height:2.2em;position:relative;top:20px;">Premium Access</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px 10px;margin:4px 0 0 0;max-width:320px;">
+      <div style="background:#111;color:#fff;font-size:0.72rem;font-weight:700;padding:4px 12px 4px 8px;border-radius:16px;border:2px dotted #fff;display:flex;align-items:center;gap:6px;text-align:left;box-shadow:none;"><span style='font-size:1.1em;color:#0f0;'>✔</span>Exclusive Access</div>
+      <div style="background:#111;color:#fff;font-size:0.72rem;font-weight:700;padding:4px 12px 4px 8px;border-radius:16px;border:2px dotted #fff;display:flex;align-items:center;gap:6px;text-align:left;box-shadow:none;"><span style='font-size:1.1em;color:#0f0;'>✔</span>Best Value</div>
+      <div style="background:#111;color:#fff;font-size:0.66rem;font-weight:700;padding:3px 7px 3px 6px;border-radius:16px;border:2px dotted #fff;display:flex;align-items:center;gap:6px;text-align:left;box-shadow:none;white-space:nowrap;"><span style='font-size:1.1em;color:#0f0;'>✔</span>Maximized Comfort</div>
+      <div style="background:#111;color:#fff;font-size:0.72rem;font-weight:700;padding:4px 12px 4px 8px;border-radius:16px;border:2px dotted #fff;display:flex;align-items:center;gap:6px;text-align:left;box-shadow:none;"><span style='font-size:1.1em;color:#0f0;'>✔</span>Latest Drops</div>
+    </div>
+    <!-- Color selection label only, swatches are now above -->
+    <div class="option-group" style="margin-top:40px;display:flex;align-items:center;gap:7px;">
+      <div class="option-title" style="font-size:1.1rem;">Color:</div>
+      <div id="selectedColorName" style="font-size:1.1rem;font-weight:700;color:#fff;">Black</div>
+    </div>
+    <div class="option-group" style="margin-top:18px;display:flex;align-items:center;gap:7px;">
+      <div class="option-title" style="font-size:1.1rem;">Size:</div>
+      <div id="selectedSizeName" style="font-size:1.1rem;font-weight:700;color:#fff;min-width:28px;">M</div>
+      <div class="sizes" style="gap:12px;display:flex;">
+        <button class="size-btn" data-size="S" style="font-size:1.1rem;padding:10px 22px;border-radius:22px;border:2px solid #fff;background:#111;color:#fff;cursor:pointer;transition:all 0.18s;font-weight:700;">S</button>
+        <button class="size-btn" data-size="M" style="font-size:1.1rem;padding:10px 22px;border-radius:22px;border:2px solid #fff;background:#111;color:#fff;cursor:pointer;transition:all 0.18s;font-weight:700;">M</button>
+        <button class="size-btn" data-size="L" style="font-size:1.1rem;padding:10px 22px;border-radius:22px;border:2px solid #fff;background:#111;color:#fff;cursor:pointer;transition:all 0.18s;font-weight:700;">L</button>
+        <button class="size-btn" data-size="XL" style="font-size:1.1rem;padding:10px 22px;border-radius:22px;border:2px solid #fff;background:#111;color:#fff;cursor:pointer;transition:all 0.18s;font-weight:700;">XL</button>
+        <button class="size-btn" data-size="XXL" style="font-size:1.1rem;padding:10px 22px;border-radius:22px;border:2px solid #fff;background:#111;color:#fff;cursor:pointer;transition:all 0.18s;font-weight:700;">XXL</button>
+      </div>
+    </div>
+    <div class="option-group" style="margin-top:18px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div class="option-title" style="font-size:1.1rem;">Quantity:</div>
+        <div class="quantity" style="gap:10px;display:flex;align-items:center;border:2px solid #fff;border-radius:10px;padding:2px 22px 2px 22px;background:rgba(0,0,0,0.18);box-shadow:0 2px 8px #0001;min-width:148px;max-width:210px;">
+          <button class="qty-btn" style="width:38px;height:38px;font-size:1.3rem;" onclick="changeQty(-1)">−</button>
+          <div class="qty-display" id="qtyDisplay" style="width:38px;font-size:1.3rem;padding:8px 0;text-align:center;">1</div>
+          <button class="qty-btn" style="width:38px;height:38px;font-size:1.3rem;" onclick="changeQty(1)">+</button>
+        </div>
+        <div style="font-size:1.1rem;margin-left:18px;">Subtotal:</div>
+        <div id="subtotalDisplay" style="font-size:1.1rem;font-weight:700;color:#fff;min-width:80px;">$25.99</div>
+      </div>
+    </div>
+    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+    <div id="purchaseNotice" style="margin: 12px auto 0 auto; text-align: center; font-size: 1.08rem; color: #fff; font-weight: 600; letter-spacing: 0.01em;"></div>
+    <div class="trust" style="font-size:1.08rem;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0;margin-top:18px;">
+      <div style="padding:0 18px;white-space:nowrap;">Safe Payment</div>
+      <span style="color:#ff1e1e;font-size:1.5em;">&bull;</span>
+      <div style="padding:0 18px;white-space:nowrap;">Secure Checkout</div>
+      <span style="color:#ff1e1e;font-size:1.5em;">&bull;</span>
+      <div style="padding:0 18px;white-space:nowrap;">Quality Guaranteed</div>
+    </div>
+    <div style="margin: 18px auto 0 auto; text-align: center;">
+      <span id="descToggle" style="display:inline-block;cursor:pointer;font-size:1.13rem;font-weight:700;color:#ff1e1e;letter-spacing:0.01em;user-select:none;">Description ▼</span>
+      <div id="descContent" style="display:none;margin:18px auto 0 auto;max-width:540px;background:#181818;border-radius:10px;padding:22px 28px;color:#fff;font-size:1.05rem;text-align:left;box-shadow:0 2px 16px #0002;">
+        Step into the high-end market with Suppliers from CopIt™ . Get exclusive access to trusted suppliers offering in-demand Clothes products, eyewear, and luxury accessories at competitive wholesale prices.<br><br>
+        ✅ Verified Clothes, Electronics, and Fragrance wholesalers & suppliers<br>
+        ✅ Includes luxury clothes, designer sunglasses & fashion essentials<br>
+        ✅ Instant digital delivery<br>
+        ✅ Perfect for resellers, boutiques & online luxury retailers<br><br>
+        With the Suppliers, you’ll always have reliable connects to keep your inventory stocked with world-class luxury products your customers want
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="auth-modal" id="authModal">
+  <div class="auth-box" id="authBox">
+    <span onclick="closeAuth()">✕</span>
+    <h2 id="authTitle">LOGIN / SIGN UP</h2>
+    <form id="authForm">
+      <input type="text" id="authEmail" placeholder="EMAIL" required>
+      <input type="password" id="authPassword" placeholder="PASSWORD" required>
+      <div id="signupFields" style="display:none;">
+        <input type="text" id="authName" placeholder="NAME" required>
+        <input type="text" id="authPhone" placeholder="PHONE NUMBER (optional)">
+      </div>
+      <button type="submit" id="authSubmit">SUBMIT</button>
+    </form>
+    <div style="margin-top:10px;">
+      <a href="#" id="toggleAuthMode">Don't have an account? Sign up</a>
+    </div>
+    <div id="authError" style="color:red;margin-top:10px;"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+// --- Purchase Notice Logic ---
+const purchaseNames = [
+  'Sarah', 'James', 'Emily', 'Michael', 'Jessica', 'David', 'Ashley', 'John', 'Emma', 'Daniel',
+  'Olivia', 'Matthew', 'Sophia', 'Andrew', 'Ava', 'Ryan', 'Mia', 'Joshua', 'Isabella', 'Ethan',
+  'Madison', 'Noah', 'Abigail', 'Liam', 'Chloe', 'Mason', 'Ella', 'Logan', 'Grace', 'Lucas'
+];
+let purchaseBase = Math.floor(Math.random() * 200) + 300; // 300-499
+let purchaseCount = purchaseBase;
+let purchaseTimeout;
+function updatePurchaseNotice() {
+  const name = purchaseNames[Math.floor(Math.random() * purchaseNames.length)];
+  document.getElementById('purchaseNotice').innerHTML =
+    `<span style=\"color:#ff1e1e;font-weight:700;\">${name}</span> just purchased &bull; <span style=\"color:#ff1e1e;font-weight:700;\">${purchaseCount}</span> people purchased`;
+  // Randomly increment the number (simulate purchases)
+  if (Math.random() < 0.7) purchaseCount++;
+  // Set next update at a random interval between 6s and 12s
+  const nextDelay = Math.floor(Math.random() * 6000) + 6000;
+  purchaseTimeout = setTimeout(updatePurchaseNotice, nextDelay);
+}
+window.addEventListener('DOMContentLoaded', () => {
+  updatePurchaseNotice();
+});
+
+// Description toggle logic
+document.addEventListener('DOMContentLoaded', function() {
+  var descToggle = document.getElementById('descToggle');
+  var descContent = document.getElementById('descContent');
+  if(descToggle && descContent) {
+    descToggle.addEventListener('click', function() {
+      if(descContent.style.display === 'none' || descContent.style.display === '') {
+        descContent.style.display = 'block';
+        descToggle.innerHTML = 'Description ▲';
+      } else {
+        descContent.style.display = 'none';
+        descToggle.innerHTML = 'Description ▼';
+      }
+    });
+  }
+});
+// Quantity logic
+let qty = 1;
+const unitPrice = 25.99;
+function updateSubtotal() {
+  document.getElementById('subtotalDisplay').textContent = `$${(qty * unitPrice).toFixed(2)}`;
+}
+function changeQty(delta) {
+  qty = Math.max(1, qty + delta);
+  document.getElementById('qtyDisplay').textContent = qty;
+  updateSubtotal();
+}
+
+// 13 hoodie colors (names and color codes for demo)
+const hoodieColors = [
+  {name:'Black', img:'images/spyder-black.jpeg'},
+  {name:'Black 2.0', img:'images/spyder-black2.jpeg'},
+  {name:'Black 3.0', img:'images/spyder-black3.jpeg'},
+  {name:'Blue', img:'images/spyder-blue.jpeg'},
+  {name:'Light blue', img:'images/spyder-lightblue.jpeg'},
+  {name:'Grey', img:'images/spyder-grey.jpeg'},
+  {name:'Grey 2.0', img:'images/spyder-grey2.jpeg'},
+  {name:'Grey 3.0', img:'images/spyder-grey3.jpeg'},
+  {name:'Brown', img:'images/spyder-brown.jpeg'},
+  {name:'Pink', img:'images/spyder-pink.jpeg'},
+  {name:'Light pink', img:'images/spyder-lightpink.jpeg'},
+  {name:'Purple', img:'images/spyder-purple.jpeg'},
+  {name:'Light purple', img:'images/spyder-lightpurple.jpeg'},
+];
+let colorIndex = 0; // index of the first visible color
+let selectedColorIdx = 0;
+let lastDirection = 0; // -1 for left, 1 for right
+
+const mainImgA = document.getElementById('mainProductImgA');
+const mainImgB = document.getElementById('mainProductImgB');
+let showingA = true;
+const colorSwatchesDiv = document.getElementById('colorSwatches');
+const leftBtn = document.getElementById('colorLeftBtn');
+const rightBtn = document.getElementById('colorRightBtn');
+
+function renderColorSwatches() {
+  colorSwatchesDiv.innerHTML = '';
+  // Update selected color name
+  const selectedColorNameDiv = document.getElementById('selectedColorName');
+  if (selectedColorNameDiv) {
+    selectedColorNameDiv.textContent = hoodieColors[selectedColorIdx].name;
+  }
+  // Show 5 real swatches, now larger and with image preview
+  for(let i=0; i<5; i++) {
+    const idx = (colorIndex + i + hoodieColors.length) % hoodieColors.length;
+    const color = hoodieColors[idx];
+    const swatch = document.createElement('div');
+    swatch.className = 'swatch';
+    swatch.setAttribute('data-color', color.name);
+    // All swatches same size and white background
+    swatch.style.background = '#fff';
+    swatch.style.border = 'none';
+    swatch.style.cursor = 'pointer';
+    swatch.style.width = '80px';
+    swatch.style.height = '80px';
+    swatch.style.minWidth = '80px';
+    swatch.style.minHeight = '80px';
+    swatch.style.maxWidth = '80px';
+    swatch.style.maxHeight = '80px';
+    swatch.style.display = 'flex';
+    swatch.style.alignItems = 'center';
+    swatch.style.justifyContent = 'center';
+    swatch.style.overflow = 'hidden';
+    swatch.style.borderRadius = '18px';
+    swatch.style.position = 'relative';
+    swatch.style.flex = '0 0 120px';
+    // Animate selected swatch
+    if(idx === selectedColorIdx) {
+      swatch.classList.add('selected');
+      swatch.style.boxShadow = '0 0 0 5px #ff1e1e55, 0 4px 24px #0002';
+      swatch.style.transform = 'scale(1.08)';
+      swatch.style.transition = 'box-shadow 0.25s, transform 0.25s';
+    } else {
+      swatch.style.boxShadow = '0 2px 12px #0001';
+      swatch.style.transform = 'scale(1)';
+      swatch.style.transition = 'box-shadow 0.25s, transform 0.25s';
+    }
+    // Add preview image inside swatch
+    const img = document.createElement('img');
+    img.src = color.img;
+    img.alt = color.name + ' preview';
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'cover';
+    img.style.borderRadius = '0';
+    img.style.display = 'block';
+    swatch.appendChild(img);
+    swatch.addEventListener('click', function() {
+      lastDirection = idx > selectedColorIdx ? 1 : -1;
+      selectedColorIdx = idx;
+      // Center the selected swatch
+      colorIndex = (selectedColorIdx - 2 + hoodieColors.length) % hoodieColors.length;
+      updateMainImage(true);
+      renderColorSwatches();
+    });
+    colorSwatchesDiv.appendChild(swatch);
+  }
+  // No fake-out swatch anymore
+}
+
+function updateMainImage(animate = false) {
+  const color = hoodieColors[selectedColorIdx];
+  let incoming, outgoing;
+  if (showingA) {
+    incoming = mainImgB;
+    outgoing = mainImgA;
+  } else {
+    incoming = mainImgA;
+    outgoing = mainImgB;
+  }
+  // Divider removed
+  if (animate && lastDirection !== 0) {
+    // Prepare incoming image
+    incoming.src = color.img;
+    incoming.alt = color.name + ' hoodie';
+    incoming.style.transition = 'none';
+    outgoing.style.transition = 'none';
+    incoming.style.opacity = '1';
+    outgoing.style.opacity = '1';
+    incoming.style.transform = `translateX(${lastDirection * 100}%) scale(1)`;
+    outgoing.style.transform = 'translateX(0) scale(1)';
+    // Force reflow
+    void incoming.offsetWidth;
+    // Animate
+    incoming.style.transition = 'transform 0.44s cubic-bezier(.4,0,.2,1), opacity 0.44s cubic-bezier(.4,0,.2,1)';
+    outgoing.style.transition = 'transform 0.44s cubic-bezier(.4,0,.2,1), opacity 0.44s cubic-bezier(.4,0,.2,1)';
+    incoming.style.transform = 'translateX(0) scale(1)';
+    outgoing.style.transform = `translateX(${-lastDirection * 100}%) scale(1)`;
+    setTimeout(() => {
+      outgoing.style.opacity = '0';
+      // Do not reset outgoing transform here to avoid ghosting
+      showingA = !showingA;
+    }, 440);
+  } else {
+    incoming.src = color.img;
+    incoming.alt = color.name + ' hoodie';
+    incoming.style.transition = 'none';
+    outgoing.style.transition = 'none';
+    incoming.style.opacity = '1';
+    outgoing.style.opacity = '0';
+    incoming.style.transform = 'translateX(0) scale(1)';
+    outgoing.style.transform = 'translateX(0) scale(1)';
+    showingA = !showingA;
+  }
+}
+
+function animateArrow(btn) {
+  btn.style.transition = 'transform 0.18s cubic-bezier(.4,0,.2,1)';
+  btn.style.transform = 'scale(1.18)';
+  setTimeout(() => {
+    btn.style.transform = 'scale(1)';
+  }, 120);
+}
+leftBtn.addEventListener('click', function() {
+  // Move selection left, wrap if needed
+  lastDirection = -1;
+  selectedColorIdx = (selectedColorIdx - 1 + hoodieColors.length) % hoodieColors.length;
+  // Center the selected swatch
+  colorIndex = (selectedColorIdx - 2 + hoodieColors.length) % hoodieColors.length;
+  animateArrow(leftBtn);
+  renderColorSwatches();
+  updateMainImage(true);
+});
+rightBtn.addEventListener('click', function() {
+  // Move selection right, wrap if needed
+  lastDirection = 1;
+  selectedColorIdx = (selectedColorIdx + 1) % hoodieColors.length;
+  // Center the selected swatch
+  colorIndex = (selectedColorIdx - 2 + hoodieColors.length) % hoodieColors.length;
+  animateArrow(rightBtn);
+  renderColorSwatches();
+  updateMainImage(true);
+});
+
+// Initial render
+
+renderColorSwatches();
+updateMainImage();
+updateSubtotal();
+
+
+// Size selection
+let selectedSize = 'M';
+function updateSizeButtons() {
+  document.querySelectorAll('.size-btn').forEach(btn => {
+    if (btn.getAttribute('data-size') === selectedSize) {
+      btn.style.background = '#ff1e1e';
+      btn.style.color = '#fff';
+      btn.style.borderColor = '#ff1e1e';
+      btn.style.boxShadow = '0 2px 10px #ff1e1e33';
+      btn.style.transform = 'scale(1.08)';
+    } else {
+      btn.style.background = '#fff';
+      btn.style.color = '#111';
+      btn.style.borderColor = '#fff';
+      btn.style.boxShadow = 'none';
+      btn.style.transform = 'scale(1)';
+    }
+    // Update selected size display
+    const selectedSizeNameDiv = document.getElementById('selectedSizeName');
+    if (selectedSizeNameDiv) {
+      selectedSizeNameDiv.textContent = selectedSize;
+    }
+  });
+}
+document.querySelectorAll('.size-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    selectedSize = btn.getAttribute('data-size');
+    updateSizeButtons();
+  });
+});
+// Set default selected size
+updateSizeButtons();
+const selectedSizeNameDiv = document.getElementById('selectedSizeName');
+if (selectedSizeNameDiv) {
+  selectedSizeNameDiv.textContent = selectedSize;
+}
+
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  cart.push({
+    id: 1,
+    name: 'Spydur Hoodie',
+    price: 25.99,
+    category: 'Hoodie',
+    size: selectedSize,
+    color: hoodieColors[selectedColorIdx].name,
+    image: hoodieColors[selectedColorIdx].img,
+    quantity: qty
+  });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert('Added to cart!');
+}
+</script>
+</body>
+</html>

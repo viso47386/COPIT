@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(120deg, #181c24 0%, #23272f 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .profile-container {
+      display: flex;
+      min-height: 100vh;
+      background: rgba(20,22,28,0.95);
+    }
+    .profile-sidebar {
+      width: 220px;
+      background: linear-gradient(160deg, #181818 60%, #23232b 100%);
+      padding: 40px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 2px 0 24px 0 rgba(0,0,0,0.18);
+      border-right: 1.5px solid #23232b;
+    }
+    .profile-sidebar button {
+      background: none;
+      border: none;
+      color: #e0e0e0;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 12px 0 0 32px;
+      padding: 10px 0 10px 0;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background .18s, color .18s, box-shadow .18s;
+      width: 80%;
+      letter-spacing: 0.5px;
+    }
+    .profile-sidebar button.active, .profile-sidebar button:hover {
+      background: linear-gradient(90deg, #ff1e1e 60%, #ff4e4e 100%);
+      color: #fff;
+      box-shadow: 0 2px 12px 0 rgba(255,30,30,0.10);
+    }
+    .profile-main {
+      flex: 1;
+      padding: 50px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      background: none;
+    }
+    .profile-section {
+      display: none;
+      background: linear-gradient(120deg, #23232b 60%, #23272f 100%);
+      border-radius: 18px;
+      box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+      padding: 36px 38px 32px 38px;
+      margin-bottom: 32px;
+      border: 1.5px solid #23232b;
+      min-width: 340px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .profile-section.active {
+      display: block;
+      animation: fadeIn .4s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .profile-info-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 22px;
+      background: rgba(30,32,40,0.85);
+      border-radius: 8px;
+      box-shadow: 0 1px 6px 0 rgba(0,0,0,0.10);
+      padding: 12px 18px;
+    }
+    .profile-info-label {
+      width: 120px;
+      color: #ff4e4e;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .profile-info-value {
+      flex: 1;
+      color: #fff;
+      font-size: 1.08em;
+    }
+    .profile-info-edit, .profile-info-add {
+      background: linear-gradient(90deg, #232323 60%, #23272f 100%);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 16px;
+      margin-left: 16px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background .18s, color .18s;
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
+    }
+    .profile-info-edit:hover, .profile-info-add:hover {
+      background: linear-gradient(90deg, #ff1e1e 60%, #ff4e4e 100%);
+      color: #fff;
+    }
+    .orders-status-bar {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 24px;
+      margin-top: 10px;
+    }
+    .orders-status-btn {
+      background: linear-gradient(90deg, #232323 60%, #23272f 100%);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background .18s, color .18s;
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10);
+    }
+    .orders-status-btn.active, .orders-status-btn:hover {
+      background: linear-gradient(90deg, #ff1e1e 60%, #ff4e4e 100%);
+      color: #fff;
+    }
+    .orders-list {
+      background: linear-gradient(120deg, #23232b 60%, #23272f 100%);
+      border-radius: 12px;
+      box-shadow: 0 2px 16px 0 rgba(0,0,0,0.13);
+      padding: 24px;
+      border: 1.5px solid #23232b;
+    }
+    .orders-list h4 {
+      margin-bottom: 10px;
+      color: #ff4e4e;
+    }
+    .orders-list .order-item {
+      border-bottom: 1px solid #232323;
+      padding: 12px 0;
+      background: rgba(30,32,40,0.85);
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+    }
+    .orders-list .order-item:last-child {
+      border-bottom: none;
+    }
+    .tos-section {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 60px;
+      background: none;
+      box-shadow: none;
+      border: none;
+      padding: 0 18px;
+    }
+    @media (max-width: 900px) {
+      .profile-main { padding: 30px 10px; }
+      .profile-section { padding: 18px 8px 18px 8px; }
+    }
+  </style>
+</head>
+<body>
+<div class="profile-container">
+  <nav class="profile-sidebar">
+    <button id="homeBtn" style="margin-bottom:18px;">Home</button>
+    <button class="active" data-section="info">User Info</button>
+    <button data-section="orders">Orders</button>
+    <button data-section="support">Customer Service</button>
+    <div style="flex:1"></div>
+    <button data-section="tos" style="font-size:12px;margin-bottom:18px;">Terms of Service</button>
+  </nav>
+  <main class="profile-main">
+    <section class="profile-section active" id="profile-info-section">
+      <h2>User Info</h2>
+      <div class="profile-info-row"><span class="profile-info-label">Name</span><span class="profile-info-value" id="profileName"></span><button class="profile-info-edit" id="editNameBtn">Edit</button></div>
+      <div class="profile-info-row"><span class="profile-info-label">Email</span><span class="profile-info-value" id="profileEmail"></span><button class="profile-info-edit" id="editEmailBtn">Edit</button></div>
+      <div class="profile-info-row"><span class="profile-info-label">Address</span><span class="profile-info-value" id="profileAddress"></span><button class="profile-info-add" id="addAddressBtn">Add</button><button class="profile-info-edit" id="editAddressBtn" style="display:none;">Edit</button></div>
+      <div class="profile-info-row"><span class="profile-info-label">Phone</span><span class="profile-info-value" id="profilePhone"></span><button class="profile-info-add" id="addPhoneBtn">Add</button><button class="profile-info-edit" id="editPhoneBtn" style="display:none;">Edit</button></div>
+      <div class="profile-info-row" id="profileRoleRow" style="display:none;"><span class="profile-info-label">Role</span><span class="profile-info-value" id="profileRole"></span></div>
+    </section>
+    <section class="profile-section" id="profile-orders-section">
+      <h2>Orders</h2>
+      <div class="orders-status-bar">
+        <button class="orders-status-btn active" data-status="unpaid">Unpaid</button>
+        <button class="orders-status-btn" data-status="processing">Processing</button>
+        <button class="orders-status-btn" data-status="shipped">Shipped</button>
+        <button class="orders-status-btn" data-status="review">Review</button>
+      </div>
+      <div class="orders-list" id="ordersList"></div>
+    </section>
+    <section class="profile-section" id="profile-support-section">
+      <h2>Customer Service</h2>
+      <p>Need help? <a href="#" id="contactSupportBtn">Contact Support</a></p>
+    </section>
+    <section class="profile-section tos-section" id="profile-tos-section">
+      <h2 style="font-size:1.2em;">Terms of Service</h2>
+      <p>Your use of this site is subject to our terms and conditions. Please read them carefully.</p>
+    </section>
+  </main>
+</div>
+<script>
+// Home button logic
+const homeBtn = document.getElementById('homeBtn');
+if (homeBtn) {
+  homeBtn.addEventListener('click', function() {
+    window.location.href = 'index.html';
+  });
+}
+// Sidebar navigation
+const sidebarBtns = document.querySelectorAll('.profile-sidebar button[data-section]');
+const sections = document.querySelectorAll('.profile-section');
+sidebarBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    sidebarBtns.forEach(b => b.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    const section = btn.dataset.section;
+    document.getElementById('profile-' + section + '-section').classList.add('active');
+  });
+});
+
+// Load user info
+
+function loadProfile() {
+  const currentUser = localStorage.getItem('currentUser');
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+  const user = users.find(u => u.email === currentUser);
+  if (!user) {
+    window.location.href = 'index.html';
+    return;
+  }
+  document.getElementById('profileName').textContent = user.name || '';
+  document.getElementById('profileEmail').textContent = user.email || '';
+  document.getElementById('profileAddress').textContent = user.address || '';
+  document.getElementById('profilePhone').textContent = user.phone || '';
+  // Only show role if mod or admin
+  const roleRow = document.getElementById('profileRoleRow');
+  if (user.role === 'admin' || user.role === 'moderator') {
+    document.getElementById('profileRole').textContent = user.role.charAt(0).toUpperCase() + user.role.slice(1);
+    roleRow.style.display = '';
+  } else {
+    roleRow.style.display = 'none';
+  }
+  // Show add/edit buttons
+  if (user.address) {
+    document.getElementById('addAddressBtn').style.display = 'none';
+    document.getElementById('editAddressBtn').style.display = '';
+  } else {
+    document.getElementById('addAddressBtn').style.display = '';
+    document.getElementById('editAddressBtn').style.display = 'none';
+  }
+  if (user.phone) {
+    document.getElementById('addPhoneBtn').style.display = 'none';
+    document.getElementById('editPhoneBtn').style.display = '';
+  } else {
+    document.getElementById('addPhoneBtn').style.display = '';
+    document.getElementById('editPhoneBtn').style.display = 'none';
+  }
+}
+
+// Edit/add handlers
+function updateUserField(field, value) {
+  const currentUser = localStorage.getItem('currentUser');
+  let users = JSON.parse(localStorage.getItem('users') || '[]');
+  const idx = users.findIndex(u => u.email === currentUser);
+  if (idx !== -1) {
+    users[idx][field] = value;
+    localStorage.setItem('users', JSON.stringify(users));
+    loadProfile();
+  }
+}
+document.getElementById('editNameBtn').onclick = function() {
+  const val = prompt('Enter new name:');
+  if (val) updateUserField('name', val);
+};
+document.getElementById('editEmailBtn').onclick = function() {
+  const val = prompt('Enter new email:');
+  if (val) updateUserField('email', val);
+};
+document.getElementById('addAddressBtn').onclick = function() {
+  const val = prompt('Enter address:');
+  if (val) updateUserField('address', val);
+};
+document.getElementById('editAddressBtn').onclick = function() {
+  const val = prompt('Edit address:');
+  if (val) updateUserField('address', val);
+};
+document.getElementById('addPhoneBtn').onclick = function() {
+  const val = prompt('Enter phone:');
+  if (val) updateUserField('phone', val);
+};
+document.getElementById('editPhoneBtn').onclick = function() {
+  const val = prompt('Edit phone:');
+  if (val) updateUserField('phone', val);
+};
+
+// Orders section
+const statusBtns = document.querySelectorAll('.orders-status-btn');
+statusBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    statusBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderOrders(btn.dataset.status);
+  });
+});
+function renderOrders(status) {
+  const currentUser = localStorage.getItem('currentUser');
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+  const user = users.find(u => u.email === currentUser);
+  const ordersList = document.getElementById('ordersList');
+  ordersList.innerHTML = '';
+  if (!user || !user.orders || !user.orders.length) {
+    ordersList.innerHTML = '<p>No orders found.</p>';
+    return;
+  }
+  let filtered = user.orders.filter(o => {
+    if (status === 'unpaid') return o.status === 'unpaid' || !o.status;
+    if (status === 'processing') return o.status === 'processing';
+    if (status === 'shipped') return o.status === 'shipped';
+    if (status === 'review') return o.status === 'review';
+    return true;
+  });
+  if (!filtered.length) {
+    ordersList.innerHTML = '<p>No orders in this status.</p>';
+    return;
+  }
+  filtered.forEach(order => {
+    ordersList.innerHTML += `<div class="order-item"><h4>Order #${order.id || ''}</h4><div>Items: ${(order.items||[]).map(i=>i.name+ ' (x'+i.qty+')').join(', ')}</div><div>Total: $${order.total||0}</div><div>Status: ${order.status||'unpaid'}</div></div>`;
+  });
+}
+
+// Customer Service
+const contactSupportBtn = document.getElementById('contactSupportBtn');
+if (contactSupportBtn) {
+  contactSupportBtn.onclick = function(e) {
+    e.preventDefault();
+    // Save message to localStorage for admin panel
+    const msg = prompt('Describe your issue or question:');
+    if (msg) {
+      const currentUser = localStorage.getItem('currentUser');
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const user = users.find(u => u.email === currentUser);
+      let contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+      contacts.push({
+        name: user.name,
+        email: user.email,
+        message: msg,
+        date: new Date().toISOString()
+      });
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+      alert('Your message has been sent to customer service.');
+    }
+  };
+}
+
+// Initial load
+loadProfile();
+renderOrders('unpaid');
+</script>
+</body>
+</html>
